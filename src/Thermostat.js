@@ -8,9 +8,14 @@ Thermostat.prototype.temperature = function() {
 };
 
 Thermostat.prototype.increaseTemperature = function() {
-  temp = temp + 1
+  temp++;
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
-  temp = temp - 1
+  if (temp < 11) {
+    temp = 10;
+  }
+  else {
+    temp--;
+  }
 };
