@@ -26,6 +26,46 @@ describe('Thermostat', function() {
     expect(thermostat.temp).toEqual(10);
   });
 
+  it('can be reset to 20', function() {
+    thermostat.increaseTemperature();
+    thermostat.resetTemperature();
+    expect(thermostat.temp).toEqual(20)
+  });
+
+  describe('display colour', function() {
+
+    it('is green when temperature is below 18', function() {
+      while (thermostat.temp > 17) {
+          thermostat.decreaseTemperature();
+        }
+      expect(thermostat.displayColour).toEqual("green");
+    });
+
+    it('is yellow when temperature is below 25', function() {
+      while (thermostat.temp < 25) {
+        thermostat.increaseTemperature();
+      };
+      thermostat.decreaseTemperature();
+      expect(thermostat.displayColour).toEqual("yellow");
+    });
+
+     it('is yellow when temperature is above 17', function() {
+      while (thermostat.temp > 17) {
+        thermostat.decreaseTemperature();
+      };
+      thermostat.increaseTemperature();
+      expect(thermostat.displayColour).toEqual("yellow");
+    });
+
+      it('is red when temperature is above 24', function() {
+      while (thermostat.temp < 25) {
+        thermostat.increaseTemperature();
+      };
+      expect(thermostat.displayColour).toEqual("red");
+    });
+
+  });
+
   describe('power save mode', function() {
     it('is ON by default', function() {
       expect(thermostat.powerMode).toEqual(true);
