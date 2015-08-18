@@ -1,8 +1,10 @@
 thermostat = new Thermostat();
 
+
 updateTemperature = function() {
   var currentTempElement =  document.getElementById('currentTemp');
   currentTempElement.innerHTML = thermostat.temp;
+  document.body.style.backgroundColor = thermostat.displayColour;
 };
 
 updateTemperature();
@@ -34,3 +36,4 @@ powerSaveElement.onchange = function() {
   thermostat.setPowerSave();
   updateTemperature();
 };
+
