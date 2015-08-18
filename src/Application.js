@@ -9,12 +9,17 @@ updateTemperature = function() {
 
 updateTemperature();
 
-var increaseTempElement = document.getElementById('increaseTemp');
 
-increaseTempElement.onclick = function() {
+//var increaseTempElement = document.getElementById('increaseTemp');
+$('#increaseTemp').click(function () {
   thermostat.increaseTemperature();
   updateTemperature();
-};
+});
+
+// increaseTempElement.onclick = function() {
+//   thermostat.increaseTemperature();
+//   updateTemperature();
+// };
 
 var decreaseTempElement = document.getElementById('decreaseTemp');
 
