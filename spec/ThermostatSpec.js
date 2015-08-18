@@ -20,10 +20,38 @@ describe('Thermostat', function() {
   });
 
   it('has a minimum temperature of 10', function() {
-    for ( i = 0; i < 15; i++) {
+    for (i = 0; i < 15; i++) {
       thermostat.decreaseTemperature();
     };
     expect(thermostat.temp).toEqual(10);
+  });
+
+  describe('power save mode', function() {
+    it('is ON by default', function() {
+      expect(thermostat.powerMode).toEqual(true);
+    });
+
+    it('is ON and max temp cannot surpass 25', function() {
+      while (thermostat.temp < 25) {
+        thermostat.increaseTemperature();
+      }
+      thermostat.increaseTemperature();
+      expect(thermostat.temp).toEqual(25);
+    });
+
+    it('can be set to OFF', function(){
+      thermostat.setPowerSaveOff();
+      expect(thermostat.powerMode).toEqual(false);
+    });
+
+    it('is OFF and max cannot surpass 32', function(){
+      thermostat.setPowerSaveOff();
+      while (thermostat.temp < 32) {
+        thermostat.increaseTemperature();
+      }
+      thermostat.increaseTemperature();
+      expect(thermostat.temp).toEqual(32);
+    });
   });
 
 });
