@@ -7,5 +7,10 @@ Thermostat.prototype.increaseTemperature = function() {
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
-  this.temp--;
+  if (temp < 11) {
+    temp = 10;
+  }
+  else {
+    temp--;
+  }
 };
