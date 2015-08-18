@@ -22,8 +22,8 @@ Thermostat.prototype.decreaseTemperature = function() {
   this._setDisplayColour();
 };
 
-Thermostat.prototype.setPowerSaveOff = function() {
-  this.powerMode = false;
+Thermostat.prototype.setPowerSave = function() {
+  this.powerMode = !this.powerMode;
 };
 
 Thermostat.prototype.resetTemperature = function() {

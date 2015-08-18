@@ -20,3 +20,17 @@ decreaseTempElement.onclick = function() {
   thermostat.decreaseTemperature();
   updateTemperature();
 };
+
+var resetTempElement = document.getElementById('resetTemp');
+
+resetTempElement.onclick = function() {
+  thermostat.resetTemperature();
+  updateTemperature();
+};
+
+var powerSaveElement = document.getElementById('powerSave');
+
+powerSaveElement.onchange = function() {
+  thermostat.setPowerSave();
+  updateTemperature();
+};

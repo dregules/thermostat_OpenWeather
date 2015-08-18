@@ -88,12 +88,12 @@ describe('Thermostat', function() {
     });
 
     it('can be set to OFF', function() {
-      thermostat.setPowerSaveOff();
+      thermostat.setPowerSave();
       expect(thermostat.powerMode).toEqual(false);
     });
 
     it('is OFF and max cannot surpass 32', function() {
-      thermostat.setPowerSaveOff();
+      thermostat.setPowerSave();
       while (thermostat.temp < 32) {
         thermostat.increaseTemperature();
       }
