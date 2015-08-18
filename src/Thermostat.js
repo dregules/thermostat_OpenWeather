@@ -10,7 +10,7 @@ Thermostat.prototype.increaseTemperature = function() {
   } else if (this.temp < 32 && this.powerMode === false) {
     this.temp++;
   };
-  this.setDisplayColour();
+  this._setDisplayColour();
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
@@ -19,7 +19,7 @@ Thermostat.prototype.decreaseTemperature = function() {
   } else {
     this.temp--;
   }
-  this.setDisplayColour();
+  this._setDisplayColour();
 };
 
 Thermostat.prototype.setPowerSaveOff = function() {
@@ -28,9 +28,10 @@ Thermostat.prototype.setPowerSaveOff = function() {
 
 Thermostat.prototype.resetTemperature = function() {
   this.temp = 20;
+  this._setDisplayColour();
 };
 
-Thermostat.prototype.setDisplayColour = function() {
+Thermostat.prototype._setDisplayColour = function() {
   if(this.temp < 18) {
     this.displayColour = "green";
   } else if (this.temp < 25) {

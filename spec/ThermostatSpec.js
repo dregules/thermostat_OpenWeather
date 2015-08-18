@@ -36,8 +36,8 @@ describe('Thermostat', function() {
 
     it('is green when temperature is below 18', function() {
       while (thermostat.temp > 17) {
-          thermostat.decreaseTemperature();
-        }
+        thermostat.decreaseTemperature();
+      }
       expect(thermostat.displayColour).toEqual("green");
     });
 
@@ -49,7 +49,7 @@ describe('Thermostat', function() {
       expect(thermostat.displayColour).toEqual("yellow");
     });
 
-     it('is yellow when temperature is above 17', function() {
+    it('is yellow when temperature is above 17', function() {
       while (thermostat.temp > 17) {
         thermostat.decreaseTemperature();
       };
@@ -57,11 +57,19 @@ describe('Thermostat', function() {
       expect(thermostat.displayColour).toEqual("yellow");
     });
 
-      it('is red when temperature is above 24', function() {
+    it('is red when temperature is above 24', function() {
       while (thermostat.temp < 25) {
         thermostat.increaseTemperature();
       };
       expect(thermostat.displayColour).toEqual("red");
+    });
+
+    it('is yellow when temperature is reset', function(){
+      while (thermostat.temp < 25) {
+        thermostat.increaseTemperature();
+      };
+      thermostat.resetTemperature();
+      expect(thermostat.displayColour).toEqual("yellow");
     });
 
   });
@@ -79,12 +87,12 @@ describe('Thermostat', function() {
       expect(thermostat.temp).toEqual(25);
     });
 
-    it('can be set to OFF', function(){
+    it('can be set to OFF', function() {
       thermostat.setPowerSaveOff();
       expect(thermostat.powerMode).toEqual(false);
     });
 
-    it('is OFF and max cannot surpass 32', function(){
+    it('is OFF and max cannot surpass 32', function() {
       thermostat.setPowerSaveOff();
       while (thermostat.temp < 32) {
         thermostat.increaseTemperature();
