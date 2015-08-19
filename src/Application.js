@@ -2,43 +2,35 @@ thermostat = new Thermostat();
 
 
 updateTemperature = function() {
-  var currentTempElement =  document.getElementById('currentTemp');
-  currentTempElement.innerHTML = thermostat.temp;
-  document.body.style.backgroundColor = thermostat.displayColour;
+  $('#currentTemp').html(thermostat.temp);
+  $('#currentTemp').css('color', thermostat.displayColour);
 };
 
-updateTemperature();
+  updateTemperature();
 
 
-//var increaseTempElement = document.getElementById('increaseTemp');
-$('#increaseTemp').click(function () {
+$('#increaseTemp').click(function() {
   thermostat.increaseTemperature();
   updateTemperature();
 });
 
-// increaseTempElement.onclick = function() {
-//   thermostat.increaseTemperature();
-//   updateTemperature();
-// };
-
-var decreaseTempElement = document.getElementById('decreaseTemp');
-
-decreaseTempElement.onclick = function() {
+$('#decreaseTemp').click(function() {
   thermostat.decreaseTemperature();
   updateTemperature();
-};
+});
 
-var resetTempElement = document.getElementById('resetTemp');
-
-resetTempElement.onclick = function() {
+$('#resetTemp').click(function() {
   thermostat.resetTemperature();
   updateTemperature();
-};
+});
 
-var powerSaveElement = document.getElementById('powerSave');
-
-powerSaveElement.onchange = function() {
+$('#powerSave').change(function() {
   thermostat.setPowerSave();
   updateTemperature();
+});
+
+
+class_name.prototype.method_name = function(first_argument) {
+  // body...
 };
 

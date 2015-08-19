@@ -2,22 +2,34 @@
 <html>
 <head>
   <title></title>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
 
 <body>
-  <p id="currentTemp"> </p>
-  <button type="button" id="increaseTemp"> Increase Temperature </button>
-  <button type="button" id="decreaseTemp"> Decrease Temperature </button>
-  <button type="button" id="resetTemp"> Reset Temperature </button>
+  <h1><span id="currentTemp"></span>&deg;C</h1>
+  <button class = "tempAlter" type="button" id="increaseTemp">
+  <p class = "button-text">
+  Increase<br />
+  Temperature
+  </p>
+  </button>
+  <button class = "tempAlter" type="button" id="decreaseTemp">
+  <p class="button-text">
+  Decrease<br />
+  Temperature
+  </p>
+  </button>
+  <br />
+  <button class = "reset" type="button" id="resetTemp">
+  <p class="button-text">
+  Reset Temperature
+  </p></button>
   <form>
-    Power Save Mode<input type="checkbox" id="powerSave" checked>
+    <span class="label">Power Save Mode </span><input type="checkbox" id="powerSave" checked>
   </form>
-
+</body>
   <script type="text/javascript" src="src/jquery-2.1.4.js"></script>
   <script type="text/javascript" src="src/Thermostat.js"></script>
   <script type="text/javascript" src="src/Application.js"></script>
-
-
-
-</body>
 </html>

@@ -1,0 +1,48 @@
+body {
+  background-image: url(../WallFon.com_13193.jpg);
+  font-family: arial;
+  text-align: center;
+}
+
+h1 {
+  font-size: 250px;
+  font-weight: bold;
+  margin: 0;
+}
+
+button {
+  font-family: arial;
+  background-color: rgba(255,255,255,1);
+  background-color: rgba(0,0,0,.5);
+  border: 2px solid rgba(255,255,255,.1);
+  color: white;
+}
+
+.tempAlter {
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+  border-radius: 10%;
+}
+
+.reset {
+  height: 50px;
+  width: 305px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.button-text {
+  font-family: american typewriter;
+  font-weight: lighter;
+  font-size: 20px;
+  position: relative;
+  margin: 0;
+}
+
+.label {
+  font-family: PT Sans;
+  font-size: 20px;
+  font-family: american typewriter;
+}
+
