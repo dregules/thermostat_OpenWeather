@@ -29,8 +29,16 @@ $('#powerSave').change(function() {
   updateTemperature();
 });
 
+$('#submit_button').click(function() {
+  captureCity = $('#city').val();
+  updateTemperature();
+});
 
-class_name.prototype.method_name = function(first_argument) {
-  // body...
-};
+$.getJSON('http://api.openweathermap.org/data/2.5/weather?q=', function(results) {
+  //$('#currentTemp').html(results.main.temp);
+  $('#currentCity').html(captureCity);
+
+});
+
+
 

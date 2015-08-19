@@ -102,4 +102,11 @@ describe('Thermostat', function() {
     });
   });
 
+  describe('current weather outside', function() {
+    it('is displayed', function(){
+      // thermostat.getCurrentWeather();
+      // expect(thermostat.currentWeather).toEqual('Sunny')
+    });
+  });
+
 });

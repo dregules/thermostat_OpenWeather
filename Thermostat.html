@@ -7,26 +7,37 @@
 </head>
 
 <body>
-  <h1><span id="currentTemp"></span>&deg;C</h1>
+  <h1>
+    <span id="currentTemp"> </span>&deg;C
+  </h1>
+  <h2>
+    <span id="currentCity"> </span>
+  </h2>
   <button class = "tempAlter" type="button" id="increaseTemp">
-  <p class = "button-text">
-  Increase<br />
-  Temperature
-  </p>
+    <p class = "button-text">
+      Increase <br />
+      Temperature
+    </p>
   </button>
   <button class = "tempAlter" type="button" id="decreaseTemp">
-  <p class="button-text">
-  Decrease<br />
-  Temperature
-  </p>
+    <p class="button-text">
+      Decrease<br />
+      Temperature
+    </p>
   </button>
   <br />
   <button class = "reset" type="button" id="resetTemp">
-  <p class="button-text">
-  Reset Temperature
-  </p></button>
+    <p class="button-text">
+      Reset Temperature
+    </p>
+  </button>
   <form>
     <span class="label">Power Save Mode </span><input type="checkbox" id="powerSave" checked>
+  </form>
+
+  <form method="post" name='cityForm'>
+    <input type="text" name="city" placeholder="Enter City">
+    <input type="submit" name="submit" id="submit_button">
   </form>
 </body>
   <script type="text/javascript" src="src/jquery-2.1.4.js"></script>

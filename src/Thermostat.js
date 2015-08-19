@@ -2,6 +2,7 @@ function Thermostat() {
   this.temp = 20;
   this.powerMode = true;
   this.displayColour = "yellow";
+  this.CurrentWeather = null;
 };
 
 Thermostat.prototype.increaseTemperature = function() {
@@ -42,4 +43,8 @@ Thermostat.prototype._setDisplayColour = function() {
   } else {
     this.displayColour = "red";
   }
+};
+
+Thermostat.prototype.getCurrentWeather = function() {
+
 };
